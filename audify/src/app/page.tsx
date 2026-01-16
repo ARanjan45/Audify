@@ -159,7 +159,7 @@ export default function HomePage() {
   const allKeys = vizData?.visualizations ? Object.keys(vizData.visualizations) : [];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
+    <div className="min-h-screen bg-linear-to-br from-slate-50 via-blue-50 to-indigo-50 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-10 w-72 h-72 bg-blue-300/20 rounded-full blur-3xl animate-pulse" style={{ animationDuration: '4s' }}></div>
@@ -173,12 +173,12 @@ export default function HomePage() {
           {/* Header */}
           <div className="text-center py-12 space-y-4 animate-in fade-in slide-in-from-top-4 duration-700">
             <div className="inline-flex items-center gap-3 mb-2">
-              <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
+              <div className="w-12 h-12 rounded-2xl bg-linear-to-br from-blue-500 to-indigo-600 flex items-center justify-center shadow-lg">
                 <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
                 </svg>
               </div>
-              <h1 className="text-5xl font-black tracking-tight bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <h1 className="text-5xl font-black tracking-tight bg-linear-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
                 Audify
               </h1>
             </div>
@@ -206,7 +206,7 @@ export default function HomePage() {
                         asChild 
                         disabled={isLoading} 
                         size="lg"
-                        className="cursor-pointer bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-base font-semibold"
+                        className="cursor-pointer bg-linear-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white shadow-lg hover:shadow-xl transition-all duration-300 px-8 py-6 text-base font-semibold"
                       >
                         <span className="flex items-center gap-3">
                           {isLoading ? (
@@ -241,7 +241,7 @@ export default function HomePage() {
                   
                   {error && (
                     <div className="flex items-center gap-2 px-4 py-3 bg-red-50 rounded-lg border border-red-200 text-red-800 animate-in fade-in slide-in-from-bottom-2">
-                      <svg className="w-5 h-5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <svg className="w-5 h-5 shrink-0" fill="currentColor" viewBox="0 0 20 20">
                         <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
                       </svg>
                       <span className="text-sm font-medium">{error}</span>
@@ -267,10 +267,10 @@ export default function HomePage() {
               {vizData.predictions && (
                 <div className="animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: '200ms' }}>
                   <Card className="border-0 shadow-2xl bg-white/90 backdrop-blur-sm overflow-hidden">
-                    <div className="bg-gradient-to-r from-blue-600 to-indigo-600 h-1"></div>
+                    <div className="bg-linear-to-r from-blue-600 to-indigo-600 h-1"></div>
                     <CardHeader className="pb-4">
                       <CardTitle className="text-2xl font-bold flex items-center gap-2">
-                        <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
+                        <div className="w-8 h-8 rounded-lg bg-linear-to-br from-blue-500 to-indigo-600 flex items-center justify-center">
                           <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
                           </svg>
@@ -282,7 +282,7 @@ export default function HomePage() {
                       {vizData.predictions.slice(0, 3).map((pred, index) => (
                         <div 
                           key={pred.class} 
-                          className="space-y-3 p-4 rounded-xl bg-gradient-to-r from-slate-50 to-blue-50 border border-blue-100 hover:shadow-md transition-all duration-300 animate-in fade-in slide-in-from-left-4"
+                          className="space-y-3 p-4 rounded-xl bg-linear-to-r from-slate-50 to-blue-50 border border-blue-100 hover:shadow-md transition-all duration-300 animate-in fade-in slide-in-from-left-4"
                           style={{ animationDelay: `${300 + index * 100}ms` }}
                         >
                           <div className="flex items-center justify-between">
@@ -303,7 +303,7 @@ export default function HomePage() {
                               variant={pred.confidence > 0.8 ? "default" : "secondary"}
                               className={`text-base px-4 py-2 font-bold ${
                                 pred.confidence > 0.8 
-                                  ? 'bg-gradient-to-r from-green-500 to-emerald-600 text-white' 
+                                  ? 'bg-linear-to-r from-green-500 to-emerald-600 text-white' 
                                   : 'bg-slate-200 text-slate-700'
                               }`}
                             >
@@ -316,7 +316,7 @@ export default function HomePage() {
                               className="h-3 bg-slate-200"
                             />
                             <div 
-                              className="absolute top-0 left-0 h-3 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full transition-all duration-1000 ease-out"
+                              className="absolute top-0 left-0 h-3 bg-linear-to-r from-blue-500 via-indigo-500 to-purple-500 rounded-full transition-all duration-1000 ease-out"
                               style={{ width: `${pred.confidence * 100}%` }}
                             ></div>
                           </div>
@@ -331,10 +331,10 @@ export default function HomePage() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: '400ms' }}>
                 {vizData.input_spectrogram && (
                   <Card className="border-0 shadow-xl bg-white/90 backdrop-blur-sm overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-                    <div className="bg-gradient-to-r from-purple-500 to-pink-500 h-1"></div>
+                    <div className="bg-linear-to-r from-purple-500 to-pink-500 h-1"></div>
                     <CardHeader className="pb-3">
                       <CardTitle className="text-xl font-bold flex items-center gap-2">
-                        <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-purple-500 to-pink-600 flex items-center justify-center">
+                        <div className="w-7 h-7 rounded-lg bg-linear-to-br from-purple-500 to-pink-600 flex items-center justify-center">
                           <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                             <path fillRule="evenodd" d="M3 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm0 4a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clipRule="evenodd" />
                           </svg>
@@ -343,7 +343,7 @@ export default function HomePage() {
                       </CardTitle>
                     </CardHeader>
                     <CardContent className="flex flex-col items-center space-y-4">
-                      <div className="w-full p-4 rounded-lg bg-gradient-to-br from-slate-50 to-slate-100 border border-slate-200">
+                      <div className="w-full p-4 rounded-lg bg-linear-to-br from-slate-50 to-slate-100 border border-slate-200">
                         <FeatureMap 
                           data={vizData.input_spectrogram.values} 
                           title={`Shape: ${vizData.input_spectrogram.shape?.join(" × ")}`}
@@ -358,10 +358,10 @@ export default function HomePage() {
                 )}
                 
                 <Card className="border-0 shadow-xl bg-white/90 backdrop-blur-sm overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-                  <div className="bg-gradient-to-r from-cyan-500 to-blue-500 h-1"></div>
+                  <div className="bg-linear-to-r from-cyan-500 to-blue-500 h-1"></div>
                   <CardHeader className="pb-3">
                     <CardTitle className="text-xl font-bold flex items-center gap-2">
-                      <div className="w-7 h-7 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
+                      <div className="w-7 h-7 rounded-lg bg-linear-to-br from-cyan-500 to-blue-600 flex items-center justify-center">
                         <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path fillRule="evenodd" d="M9.383 3.076A1 1 0 0110 4v12a1 1 0 01-1.707.707L4.586 13H2a1 1 0 01-1-1V8a1 1 0 011-1h2.586l3.707-3.707a1 1 0 011.09-.217zM14.657 2.929a1 1 0 011.414 0A9.972 9.972 0 0119 10a9.972 9.972 0 01-2.929 7.071 1 1 0 01-1.414-1.414A7.971 7.971 0 0017 10c0-2.21-.894-4.208-2.343-5.657a1 1 0 010-1.414zm-2.829 2.828a1 1 0 011.415 0A5.983 5.983 0 0115 10a5.984 5.984 0 01-1.757 4.243 1 1 0 01-1.415-1.415A3.984 3.984 0 0013 10a3.983 3.983 0 00-1.172-2.828 1 1 0 010-1.415z" clipRule="evenodd" />
                         </svg>
@@ -369,7 +369,7 @@ export default function HomePage() {
                       Audio Waveform
                     </CardTitle>
                   </CardHeader>
-                  <CardContent className="flex flex-col items-center justify-center h-full min-h-[250px]">
+                  <CardContent className="flex flex-col items-center justify-center h-full min-h-62.5">
                     <Waveform data={vizData.waveform.values} title={`${vizData.waveform.duration.toFixed(2)}s * ${vizData.waveform.sample_rate} Hz`} />
                       
                   </CardContent>
@@ -379,10 +379,10 @@ export default function HomePage() {
               {/* Convolutional Layer Outputs - Hierarchical View */}
               <div className="animate-in fade-in slide-in-from-bottom-4 duration-700" style={{ animationDelay: '600ms' }}>
                 <Card className="border-0 shadow-2xl bg-white/90 backdrop-blur-sm overflow-hidden">
-                  <div className="bg-gradient-to-r from-orange-500 via-red-500 to-pink-500 h-1"></div>
+                  <div className="bg-linear-to-r from-orange-500 via-red-500 to-pink-500 h-1"></div>
                   <CardHeader className="pb-4">
                     <CardTitle className="text-2xl font-bold flex items-center gap-2">
-                      <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-red-600 flex items-center justify-center">
+                      <div className="w-8 h-8 rounded-lg bg-linear-to-br from-orange-500 to-red-600 flex items-center justify-center">
                         <svg className="w-5 h-5 text-white" fill="currentColor" viewBox="0 0 20 20">
                           <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
                         </svg>
@@ -411,12 +411,12 @@ export default function HomePage() {
                                     {name}
                                   </h3>
                                   <span className="text-[10px] text-slate-500 font-mono bg-orange-50 px-2 py-0.5 rounded border border-orange-200">
-                                    {data.shape.join(" × ")}
+                                    {data.shape.join(" x ")}
                                   </span>
                                 </div>
 
                                 {/* Scrollable Container for Layer Content */}
-                                <div className="flex flex-col items-center p-4 rounded-xl bg-gradient-to-br from-slate-50 to-orange-50 border-2 border-orange-200 shadow-lg h-[600px] overflow-y-auto scrollbar-thin scrollbar-thumb-orange-300 scrollbar-track-orange-100">
+                                <div className="flex flex-col items-center p-4 rounded-xl bg-linear-to-br from-slate-50 to-orange-50 border-2 border-orange-200 shadow-lg h-150 overflow-y-auto scrollbar-thin scrollbar-thumb-orange-300 scrollbar-track-orange-100">
                                   <div className="space-y-4">
                                     {/* Main Layer Visualization */}
                                     <div className="flex flex-col items-center">

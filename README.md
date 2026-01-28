@@ -1,70 +1,153 @@
-🎧 Audify — Audio Classification & CNN Visualization
+🎧 Audify — AI-Powered Environmental Sound Classification
 
-Audify is an interactive AI-powered audio classification system that allows users to upload audio files and visualize how a Convolutional Neural Network (CNN) interprets sound at each layer. The project focuses on model interpretability, showing spectrograms, waveforms, and internal feature maps that lead to final predictions.
+Audify is an end-to-end deep learning system for classifying real-world environmental sounds using convolutional neural networks (CNNs). The project demonstrates a complete ML workflow — from raw audio preprocessing and feature extraction to model inference, interpretability, and deployment.
 
-🚀 Features
+<p align="center"> <img src="assets/audify-upload.png" width="800"/> </p>
+🚀 Overview
 
-🎵 Upload WAV audio files for real-time inference
+Environmental sound understanding is a key problem in audio intelligence. Audify solves this by converting raw audio signals into log Mel-spectrograms and using a CNN to learn meaningful audio representations for accurate sound classification.
 
-📊 Audio waveform and Mel-spectrogram visualization
+The system is designed for real-time inference, model transparency, and scalability, making it suitable for practical AI applications.
 
-🧠 CNN-based audio classification
+✨ Features
 
-🔍 Layer-wise convolutional feature map visualization
+🎵 Classification of 50 environmental sound classes
 
-📈 Confidence-based prediction ranking
+🧠 CNN-based deep learning model
 
-🖥️ Clean, interactive UI for model introspection
+🔊 Log Mel-spectrogram feature extraction
 
-🧠 Model Overview
+🧪 Data augmentation (SpecAugment)
 
-Input audio is converted into a Mel-spectrogram
+⚡ Real-time audio inference
 
-Spectrograms are passed through a multi-layer CNN
+📊 Top-K predictions with confidence scores
 
-Intermediate convolutional outputs are captured and visualized
+🔍 CNN feature map visualization for model interpretability
 
-Final softmax layer outputs class probabilities
+🌐 Scalable deployment using cloud GPU infrastructure
 
-This approach helps understand what the model learns at each stage, not just the final prediction.
+📊 Classification Results
 
-📷 Application Screenshots
-Audio Upload Interface
-<img src="assets/audify-upload.png" alt="Audio Upload" width="800"/>
-Classification Results
-<img src="assets/classification-results.png" alt="Classification Results" width="800"/>
-Spectrogram & Waveform Visualization
-<img src="assets/spectrogram-waveform.png" alt="Spectrogram and Waveform" width="800"/>
-CNN Feature Map Visualization
-<img src="assets/feature-maps.png" alt="Feature Maps" width="800"/>
-🛠️ Tech Stack
+Audify outputs ranked predictions along with confidence scores for each detected sound class.
 
-Python
+<p align="center"> <img src="assets/classification-results.png" width="800"/> </p>
+🔊 Audio Representation
 
-PyTorch
+Raw audio waveforms are converted into log Mel-spectrograms before being passed to the neural network. Both the waveform and spectrogram are visualized to provide insight into the input representation.
 
-Librosa (audio processing)
+<p align="center"> <img src="assets/spectrogram-waveform.png" width="800"/> </p>
+🧠 Model Interpretability — Feature Map Visualization
 
-NumPy
+To improve transparency, Audify visualizes intermediate CNN feature maps. This allows users to observe how convolutional layers progressively extract higher-level audio features from raw spectrograms.
 
-Matplotlib
+<p align="center"> <img src="assets/feature-maps.png" width="900"/> </p>
+🏗️ Model Architecture
 
-FastAPI / Flask (inference backend)
+Convolutional Neural Network (CNN)
 
-React / Next.js (frontend UI)
+Stacked convolution + ReLU blocks
 
-⚙️ How It Works
+Batch normalization and dropout for regularization
 
-User uploads an audio file (.wav)
+Adaptive average pooling
 
-Audio is normalized and converted to a Mel-spectrogram
+Fully connected classification head
 
-Spectrogram is fed into a trained CNN model
+The model is trained on log Mel-spectrograms derived from raw audio signals.
 
-Model outputs:
+🗂️ Dataset
 
-Predicted class probabilities
+ESC-50 Dataset
 
-Intermediate feature maps from each convolutional layer
+2,000 labeled environmental audio clips
 
-Results are visualized in the UI
+50 classes × 40 clips per class
+
+Each clip is 5 seconds long
+
+Balanced dataset suitable for benchmarking
+
+🏋️ Training Details
+
+Framework: PyTorch
+
+Audio Processing: Torchaudio
+
+Loss Function: Cross-Entropy Loss
+
+Optimizer: Adam
+
+Batch Size: 32
+
+Augmentation Techniques:
+
+Time Masking
+
+Frequency Masking
+
+🌐 Deployment
+
+Audify is deployed as a scalable inference service using Modal, enabling GPU-accelerated audio classification through an API interface.
+
+Inference pipeline:
+
+Audio upload
+
+Preprocessing and normalization
+
+Feature extraction
+
+CNN inference
+
+Top-K prediction output
+
+📦 Tech Stack
+
+Language: Python
+
+Deep Learning: PyTorch
+
+Audio Processing: Torchaudio, Librosa
+
+Model Type: Convolutional Neural Networks (CNNs)
+
+Deployment: Modal
+
+Visualization: Matplotlib
+
+🎯 Use Cases
+
+Environmental monitoring systems
+
+Smart surveillance applications
+
+Audio-based event detection
+
+Assistive technologies
+
+AI/ML research and experimentation
+
+📈 Future Enhancements
+
+Multi-label sound classification
+
+Streaming audio support
+
+Attention-based architectures
+
+Explainability techniques (Grad-CAM for audio)
+
+Mobile-friendly inference endpoints
+
+👤 Author
+
+Aprajita Ranjan
+
+GitHub: https://github.com/ARanjan45
+
+LinkedIn: https://www.linkedin.com/in/aprajita-ranjan-961a0523b
+
+⭐ Why Audify?
+
+Audify showcases strong fundamentals in audio signal processing, deep learning, model interpretability, and production deployment, making it a solid project for AI/ML internships and research roles.

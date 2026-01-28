@@ -31,7 +31,7 @@ The system is designed for real-time inference, model transparency, and scalabil
 
 Audify outputs ranked predictions along with confidence scores for each detected sound class.
 
-<p align="center"> <img src="assets/classification-results.png" width="800"/> </p>
+<p align="center"> <img src="assets/classification-result.png" width="800"/> </p>
 🔊 Audio Representation
 
 Raw audio waveforms are converted into log Mel-spectrograms before being passed to the neural network. Both the waveform and spectrogram are visualized to provide insight into the input representation.

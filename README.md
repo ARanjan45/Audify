@@ -27,11 +27,25 @@ The system is designed for real-time inference, model transparency, and scalabil
 
 🌐 Scalable deployment using cloud GPU infrastructure
 
-📊 Classification Results
+## 📊 Classification Results
 
 Audify outputs ranked predictions along with confidence scores for each detected sound class.
 
 <p align="center"> <img src="assets/classification-result.png" width="800"/> </p>
+
+## 📈 Training Results
+
+| Metric | Value |
+|--------|-------|
+| Training Accuracy | ~100% |
+| Validation Accuracy | **~80%** |
+| Epochs | 109 |
+| Dataset | ESC-50 (2,000 clips, 50 classes) |
+| Human Baseline (ESC-50) | ~81% |
+
+The model achieves **~80% validation accuracy**, closely matching the human performance baseline of 81% on ESC-50 — a strong result for a CNN trained from scratch without pretrained weights. Training was conducted across multiple runs with iterative hyperparameter tuning, tracked via TensorBoard.
+
+<p align="center"> <img src="assets/training-curves.png" width="800"/> </p>
 🔊 Audio Representation
 
 Raw audio waveforms are converted into log Mel-spectrograms before being passed to the neural network. Both the waveform and spectrogram are visualized to provide insight into the input representation.

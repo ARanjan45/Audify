@@ -13,7 +13,7 @@ The system is designed for real-time inference, model transparency, and scalabil
 
 🎵 Classification of 50 environmental sound classes
 
-🧠 CNN-based deep learning model
+🧠 **ResNet-style CNN** — custom residual architecture with 4 layer groups (64→128→256→512 channels)
 
 🔊 Log Mel-spectrogram feature extraction
 
